@@ -8,7 +8,7 @@ writers:
 
 首先我们需要修改我们的modid，这需要修改三个地方:gradle,mods.toml,以及模组主类。
 
-从gradle开始: 打开我们的build.gradle文件，翻到最底下，有这样一段内容:
+从gradle开始: 打开我们的gradle.properties文件，翻到最底下，有这样一段内容:
 
 ![img](/base/pre_image_1.png)
 这些绿色的部分就是我们需要修改的内容。从上到下依次是：
