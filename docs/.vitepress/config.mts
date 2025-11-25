@@ -78,6 +78,8 @@ export default defineConfig({
               {text: "物品渲染-变色", link: "/render/item/color"},
               {text: "物品渲染-BEWLR", link: "/render/item/bewlr"},
               {text: "物品渲染-已烘培模型", link: "/render/item/baked_model"},
+              {text: "渲染目标", link: "/render/render_target"},
+              {text: "渲染流程*", link: "/render/game_render_process"},
             ]
           },
           {text: "非生物实体学", link: "/unliving/",
