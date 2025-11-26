@@ -718,30 +718,31 @@ public static record SortState(Vector3f[] centroids, VertexFormat.IndexType inde
 
 ## 流程栈追踪
 
+```
 -Main#main L230
 -Minecraft#run L813
 -Minecraft#runTick L1201
 -GameRenderer#render L1030
 
 rebuild task created by:
--LevelRenderer#renderLevel L970
-compile sync:
--LevelRenderer#compileSections L1992
--SectionRenderDispatcher#rebuildSectionSync L179
--SectionRenderDispatcher.RenderSection#compileSync L477
--DOTASK SectionRenderDispatcher.RenderSection#compileSync L478
-rebuild async:
--LevelRenderer#compileSections L2006
--SectionRenderDispatcher.RenderSection#rebuildSectionAsync L458
--SCHEDULE SectionRenderDispatcher.RenderSection#rebuildSectionAsync L459
-
+    -LevelRenderer#renderLevel L970
+    compile sync:
+        -LevelRenderer#compileSections L1992
+        -SectionRenderDispatcher#rebuildSectionSync L179
+        -SectionRenderDispatcher.RenderSection#compileSync L477
+        -DOTASK SectionRenderDispatcher.RenderSection#compileSync L478
+    rebuild async:
+        -LevelRenderer#compileSections L2006
+        -SectionRenderDispatcher.RenderSection#rebuildSectionAsync L458
+        -SCHEDULE SectionRenderDispatcher.RenderSection#rebuildSectionAsync L459
 resort transparency task created by:
--LevelRenderer#renderLevel L972 or L974 or L976 or L1184 or L1186 or L1203 or L1207
--LevelRenderer#renderSectionLayer L1308
--SectionRenderDispatcher.RenderSection#resortTransparency L418
--SCHEDULE SectionRenderDispatcher.RenderSection#resortTransparency L421
--execute SCHEDULE
--SectionRenderDispatcher#schedule L197
--DOTASK SectionRenderDispatcher#runTask L102
+    -LevelRenderer#renderLevel L972 or L974 or L976 or L1184 or L1186 or L1203 or L1207
+    -LevelRenderer#renderSectionLayer L1308
+    -SectionRenderDispatcher.RenderSection#resortTransparency L418
+    -SCHEDULE SectionRenderDispatcher.RenderSection#resortTransparency L421
+    -execute SCHEDULE
+    -SectionRenderDispatcher#schedule L197
+    -DOTASK SectionRenderDispatcher#runTask L102
 
 -RenderSection.RebuildTask#doTask L565
+```
