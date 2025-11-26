@@ -212,6 +212,7 @@ public void renderLevel(
     //初始化地形渲染
     profilerfiller.popPush("terrain_setup");
     //这里通过检查摄像机区块位置以及最大渲染距离来判定可见区块范围，并根据视锥角范围确定真正需要执行渲染的区块。
+    //这部分就会决定视野内可见的区块切片，这部分内容会被在下方的编译区块切片部分被用到
     this.setupRender(camera, frustum, flag, this.minecraft.player.isSpectator());
     //编译调度区块烘培
     profilerfiller.popPush("compile_sections");
@@ -900,3 +901,4 @@ public void renderClouds(PoseStack poseStack, Matrix4f frustumMatrix, Matrix4f p
 > ![clash](/render/cloud_code_highver.png)
 > 感谢渲染重构吧！
 > 也感谢AR大佬对这部分代码的分析与测试！
+
